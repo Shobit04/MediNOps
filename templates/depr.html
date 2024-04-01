@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Assessment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Depression Assessment Form</h1>
+    <form action="/depr" method="post">
+        <label for="profession">What is your profession?</label><br>
+        <select id="profession" name="profession">
+            <option value="Unemployed">Unemployed</option>
+            <option value="Service holder (Private)">Service holder (Private)</option>
+            <option value="Student">Student</option>
+            <option value="Service holder (Government)">Service holder (Government)</option>
+        </select><br>
+
+        <label for="gender">What is your gender?</label><br>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label><br>
+
+        <label for="debt">Are you facing any debt?</label><br>
+        <select id="debt" name="debt">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br>
+
+        <label for="illness">Do you feel illness?</label><br>
+        <select id="illness" name="illness">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br>
+
+        <label for="threat">Do you have a threat of something?</label><br>
+        <select id="threat" name="threat">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br>
+
+        <label for="sleep">What is your average sleep duration?</label><br>
+        <select id="sleep" name="sleep">
+            <option value="More than 8">More than 8 hours</option>
+            <option value="8">8 hours</option>
+            <option value="7">7 hours</option>
+            <option value="6">6 hours</option>
+            <option value="5">5 hours</option>
+        </select><br>
+
+        <label for="insomnia">Do you have insomnia?</label><br>
+        <select id="insomnia" name="insomnia">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br>
+
+        <label for="anxiety">Do you feel anxiety?</label><br>
+        <select id="anxiety" name="anxiety">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br>
+
+        <label for="living_with">Whom are you living with?</label><br>
+        <select id="living_with" name="living_with">
+            <option value="With Family">With Family</option>
+            <option value="Without Family">Without Family</option>
+        </select><br>
+        
+        <label for="lost">Whom Do u filled lost?</label><br>
+        <select id="lost" name="lost">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

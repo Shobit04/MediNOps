@@ -1,0 +1,98 @@
+<!-- chat.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #chat_history {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            min-height: 300px;
+            overflow-y: auto;
+        }
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .user-message {
+            background-color: #007bff;
+            color: #fff;
+            text-align: right;
+        }
+        .assistant-message {
+            background-color: #28a745;
+            color: #fff;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"] {
+            width: calc(100% - 80px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 80px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diebetes Chatbot</h1>
+        <div id="chat_history">
+            <!-- Loop through the chat history and display each message -->
+            {% for message in chat_history %}
+                <div class="message user-message">
+                    <p>{{ message.user }}</p>
+                </div>
+                <div class="message assistant-message">
+                    <p>{{ message.assistant }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- Form for asking questions -->
+        <form method="POST" action="/chat">
+            <label for="user_question">Your Question:</label><br>
+            <input type="text" id="user_question" name="user_question">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
